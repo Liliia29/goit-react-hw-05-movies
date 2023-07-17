@@ -1,0 +1,64 @@
+import axios from 'axios';
+
+const API_KEY = '37a520d43e9c95df130da7fe0dcee2e8';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+
+export const getTrending = async signal => {
+  const response = await axios.get('trending/movie/day', {
+    signal,
+    params: {
+      api_key: API_KEY,
+      language: 'en-US',
+    },
+  });
+  return response.data.results;
+};
+
+export const getMoviesByQuery = async (query, signal) => {
+  const response = await axios.get('search/movie', {
+    signal,
+    params: {
+      api_key: API_KEY,
+      language: 'en-US',
+      query,
+      include_adult: false,
+      page: 1,
+    },
+  });
+
+  return response.data.results;
+};
+
+export const getMovieDetails = async (movieId, signal) => {
+  const response = await axios.get(`movie/${movieId}`, {
+    signal,
+    params: {
+      api_key: API_KEY,
+      language: 'en-US',
+    },
+  });
+  return response.data;
+};
+
+export const getCast = async (movieId, signal) => {
+  const response = await axios.get(`movie/${movieId}/credits`, {
+    signal,
+    params: {
+      api_key: API_KEY,
+      language: 'en-US',
+    },
+  });
+  return response.data.cats;
+};
+
+export const getReviews = async (movieId, signal) => {
+  const response = await axios.get(`movie/${movieId}/reviews`, {
+    signal,
+    params: {
+      api_key: API_KEY,
+      language: 'en-US',
+      page: 1,
+    },
+  });
+  return response.data.results;
+};
