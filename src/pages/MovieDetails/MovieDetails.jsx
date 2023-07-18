@@ -18,7 +18,7 @@ import {
 const MovieDetails = () => {
     const { movieId } = useParams();
     const [movieInfo, setMovieInfo] = useState(null);
-    const [isLoading, setisLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const abortCtrl = useRef();
     const location = useLocation();
@@ -47,7 +47,7 @@ const MovieDetails = () => {
                     setError(error.message);
                   }
               } finally{
-                setisLoading(false);
+                setIsLoading(false);
               }
         }; 
         getMovieInfo();
@@ -72,7 +72,7 @@ const MovieDetails = () => {
         {!isLoading && movieInfo && (
             <>
             <StyledLink to={backLinkHref}>
-                <FaArrowLeft/>
+                
                 Go back
             </StyledLink>
             <div>
