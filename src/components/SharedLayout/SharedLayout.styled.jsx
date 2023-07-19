@@ -36,7 +36,7 @@ export const StyledLink = styled(NavLink)`
 
 export const Header = styled.header`
     padding: 20px 0;
-    background-color: #fde2f3;
+    background-color: #81b3e8;
 `;
 
 export const LinksList = styled.ul`

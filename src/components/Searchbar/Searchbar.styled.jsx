@@ -31,7 +31,7 @@ export const Button = styled.button`
     justify-content: center;
     column-gap: 5px;
     min-width: 100px;
-    height: 36px;
+    height: 40px;
     padding: 8px 10px;
 
     border-top-right-radius: 5px;

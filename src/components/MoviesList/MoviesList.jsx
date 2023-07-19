@@ -22,13 +22,13 @@ const MoviesList = ({ movieItems }) => {
           <StyledItem key={id}>
             <StyledLink to={chooseURL(id)} state={{ from: location }}>
               <StyledImg
-                width="300px"
                 src={
                   poster_path
                     ? `https://image.tmdb.org/t/p/w500${poster_path}`
                     : `https://placehold.jp/300x450.png`
                 }
                 alt=""
+                width="300px"
               />
               <MovieName>{title}</MovieName>
             </StyledLink>
