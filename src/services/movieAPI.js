@@ -48,7 +48,7 @@ export const getCast = async (movieId, signal) => {
       language: 'en-US',
     },
   });
-  return response.data.cats;
+  return response.data.cast;
 };
 
 export const getReviews = async (movieId, signal) => {

@@ -10,13 +10,14 @@ import {
 } from './Cast.styled';
 
 const Cast = () => {
-  const { movieId } = useParams;
+  const { movieId } = useParams();
   const [cast, setCast] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const abortCtrl = useRef();
 
   useEffect(() => {
+    
     const getCastInfo = async () => {
       if (abortCtrl.current) {
         abortCtrl.current.abort();
